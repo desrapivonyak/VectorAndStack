@@ -1,11 +1,12 @@
 #pragma once
+#include <string>
 
 template <typename T>
 
 class Vector{
 public:
   Vector();
-  ~Vector() = default;
+  ~Vector();
 
   void set_size(const int);
   int get_size() const;
@@ -13,10 +14,10 @@ public:
   void set_capacity(const int);
   int get_capacity() const;
 
-  void push_back(const int);
+  void push_back(const T&);
   void pop_back();
 
-  int& operator[](const int);
+  T& operator[](const int);
 protected:
   int size;
   int capacity;
@@ -24,3 +25,4 @@ protected:
 };
 
 extern template class Vector<int>;
+extern template class Vector<std::string*>;
